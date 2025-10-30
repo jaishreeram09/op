@@ -1,0 +1,47 @@
+NMOS Transfer Characteristics 
+MOS IP CHARACTERS 
+VDD 3 0 DC 1.8V 
+VIN 1 0 1.8V 
+VX 3 2 DC 0V 
+.include "E:\VLSI_ July_Nov_2021\Lab_Work\MOS Tr\MOSMODEL.TXT" 
+M1 2 1 0 0 CMOSN L = 0.18u W=20U 
+.DC VIN 0 1.8V 0.001 VDD 0 1.8 0.2 
+.PLOT DC V(2,0) 
+.PROBE 
+.END
+
+Program for NMOS Drain Characteristics 
+MOS IP CHARACTERS 
+VDD 3 0 DC 1.8V 
+VIN 1 0 1.8V 
+VX 3 2 DC 0V 
+.include "E:\VLSI_ July_Nov_2021\Lab_Work\MOS Tr\MOSMODEL.TXT" 
+M1 2 1 0 0 CMOSN L = 0.18u W=20U 
+.DC VDD 0 1.8V 0.001 VIN 0 1.8 0.2 
+.PLOT DC V(2,0) 
+.PROBE 
+.END
+
+program for PMOS Transfer Characteristics 
+PMOS IP CHARACTERS 
+VDD 3 0 DC -1.8V 
+VIN 1 0 -1.8V 
+VX 3 2 DC 0V 
+.include "E:\VLSI_ July_Nov_2021\Lab_Work\MOS Tr\MOSMODEL.TXT" 
+M1 2 1 0 3 CMOSP L = 0.18u W=20U 
+.DC VIN -1.8V 0 0.001 VDD -1.8 0 0.4 
+.PLOT DC V(2,0) 
+.PROBE 
+ .END
+
+Program for PMOS Drain Characteristics 
+PMOS OP CHARACTERS 
+VDD 3 0 DC -1.8V 
+VIN 1 0 -1.8V 
+VX 3 2 DC 0V 
+.include "E:\VLSI_ July_Nov_2021\Lab_Work\MOS Tr\MOSMODEL.TXT" 
+M1 2 1 0 3 CMOSP L = 0.18u W=20U 
+.DC VDD -1.8V 0 0.001 VIN -1.8 0 0.4 
+.PLOT DC V(2,0) 
+.PROBE 
+ .END
