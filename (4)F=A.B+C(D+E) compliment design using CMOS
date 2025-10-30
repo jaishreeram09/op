@@ -1,0 +1,21 @@
+*CMOS FUNCTION IMPLEMENTATION 
+.include "P:\2023-24-DVLSI\Lab_Work\mosmodel.txt" 
+VDD 11 0 DC 1.8V 
+VA 1 0 PULSE(0 1.8 10n 1n 1n 20U 200U) 
+VB 2 0 PULSE(0 1.8 40n 1n 1n 80U 400U) 
+VC 3 0 PULSE(0 1.8 60n 1n 1n 100U 600U) 
+VD 4 0 PULSE(0 1.8 80n 1n 1n 120U 800U) 
+VE 5 0 PULSE(0 1.8 100n 1n 1n 160U 1000U) 
+M1 8 1 6 0 cmosn l=0.18u w=0.72u 
+M2 6 2 0 0 cmosn l=0.18u w=0.72u 
+M3 8 3 7 0 cmosn l=0.18u W=0.72u
+M4 7 4 0 0 cmosn l=0.18u w=0.72u 
+M5 7 5 0 0 cmosn l=0.18u w=0.72u 
+M6 10 1 11 11 cmosp l=0.18u w=1.44u 
+M7 10 2 11 11 cmosp l=0.18u w=2.16u 
+M8 8 3 10 11 cmosp l=0.18u w=1.44u 
+M9 9 4 10 11 cmosp l=0.18u w=2.16u 
+M10 8 5 9 11 cmosp l=0.18u w=2.16u 
+.TRAN 0U 1800U 
+.PROBE 
+.END
