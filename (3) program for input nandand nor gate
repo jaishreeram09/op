@@ -20,3 +20,33 @@ M4 3 4 2 2 CMOSP L=0.18U W=0.36U
 .PLOT DC V(3) 
 .PROBE 
 .END
+
+
+* CMOS 2-input NOR Gate
+.include "D:\dattraj\mosmodel.txt"
+
+* Power supply
+VDD 2 0 1.8V
+
+* Input pulses
+VA A 0 PULSE(0 1.8 0n 0.1n 0.1n 20n 40n)
+VB B 0 PULSE(0 1.8 10n 0.1n 0.1n 20n 40n)
+
+* Transistor connections
+* PMOS Network (parallel)
+M1 OUT A 2 2 CMOSP L=0.18u W=1.44u
+M2 OUT B 2 2 CMOSP L=0.18u W=1.44u
+
+* NMOS Network (series)
+M3 OUT A N1 0 CMOSN L=0.18u W=8.36u
+M4 N1  B 0 0 CMOSN L=0.18u W=8.36u
+
+* Analysis
+.OP
+.TRAN 0.1n 160n
+
+* Output observation
+.PLOT TRAN V(OUT)
+.PRINT TRAN V(A) V(B) V(OUT)
+
+.END
