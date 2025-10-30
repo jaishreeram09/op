@@ -1,0 +1,22 @@
+CMOS NAND Gate 
+* Model file inclusion 
+*TSMC 0.18 um Technology file 
+.include "E:\VLSI_ July_Nov_2021\Lab_Work\EXPT 3\mosmodel.txt" 
+* Supply voltage 
+VDD 2 0 1.8V 
+*input voltages 
+VA 1 0 PULSE ( 0 1.8 0 0.1n 0.1N 20n 40n) 
+VB 4 0 PULSE ( 0 1.8 10N 0.1n 0.1N 20n 40n)
+CMOS NAND PMOS and NMOS Connections 
+M1 3 1 5 0 CMOSN L=0.18U W=0.36U 
+M2 3 1 2 2 CMOSP L=0.18U W=0.36U 
+M3 5 4 0 0 CMOSN L=0.18U W=0.36U 
+M4 3 4 2 2 CMOSP L=0.18U W=0.36U 
+*C1 3 0 0.001P 
+* ANALYSIS 
+.OP 
+.TRAN 0N 160NS 
+*OUTPUT 
+.PLOT DC V(3) 
+.PROBE 
+.END
