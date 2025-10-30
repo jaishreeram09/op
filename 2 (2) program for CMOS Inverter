@@ -1,0 +1,12 @@
+VTC of CMOS Inverter 
+VDD 1 0 DC 1.8V 
+VD 1 4 DC 0V 
+.include "E:\VLSI_ July_Nov_2021\Lab_Work\MOS Tr\MOSMODEL.TXT" 
+Mn 3 2 0 0 CMOSN W=5U L=0.18U 
+Mp 3 2 4 1 CMOSP W=10U L=0.18U 
+Vin 2 0 DC 1.8V 
+.DC Vin 0 1.8V 0.001 
+.PLOT V(3) 
+.PLOT D((V(3)) 
+.PLOT I(VD)*VDD 
+.END
